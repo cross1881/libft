@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:28:49 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 14:29:16 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:10:12 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*dest;
+	void	*str;
 
-	dest = malloc(size * count);
-	if (!dest)
+	if ((size * count) > 2147483424 || (count + size) < size
+		|| (count + size) < count)
 		return (NULL);
-	ft_memset(dest, 0, size * count);
-	return (dest);
+	str = malloc(size * count);
+	if (!str)
+		return (NULL);
+	ft_memset(str, 0, size * count);
+	return (str);
 }

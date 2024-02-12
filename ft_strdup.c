@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:29:44 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 14:30:30 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:21:14 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*dest;
+	char	*str;
 
-	dest = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (!dest)
+	str = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
+	if (!str)
 		return (NULL);
-	ft_memcpy(dest, s1, ft_strlen(s1));
-	*(dest + ft_strlen(s1)) = '\0';
-	return (dest);
+	ft_memcpy(str, s1, ft_strlen(s1));
+	*(str + ft_strlen(s1)) = '\0';
+	return (str);
 }

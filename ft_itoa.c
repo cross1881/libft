@@ -6,7 +6,7 @@
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:38:22 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 16:35:07 by mrossett         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:10:43 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,59 @@
 
 int	ft_intlen(int n)
 {
-	int	n_len;
+	int	len;
 
-	n_len = 0;
+	len = 0;
 	if (n == 0)
-		n_len++;
+		len++;
 	if (n < 0)
 	{
 		n *= -1;
-		n_len++;
+		len++;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		n_len++;
+		len++;
 	}
-	return (n_len);
+	return (len);
 }
 
-char	*ft_charconv(char *dest, int n, int n_len)
+char	*ft_charconv(char *dst, int n, int len)
 {
 	if (n == 0)
-		*dest = 48;
+		*dst = 48;
 	if (n < 0)
 	{
-		*dest = 45;
+		*dst = 45;
 		n *= -1;
 	}
 	while (n > 0)
 	{
-		*(dest + n_len--) = 48 + (n % 10);
+		*(dst + len--) = 48 + (n % 10);
 		n /= 10;
 	}
-	return (dest);
+	return (dst);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*dest;
-	int		n_len;
+	char	*dst;
+	int		len;
 
 	if (n == -2147483648)
 	{
-		dest = (char *)malloc(sizeof(char) * 12);
-		if (!dest)
+		dst = (char *)malloc(sizeof(char) * 12);
+		if (!dst)
 			return (NULL);
-		ft_strlcpy(dest, "-2147483648", 12);
-		return (dest);
+		ft_strlcpy(dst, "-2147483648", 12);
+		return (dst);
 	}
-	n_len = ft_intlen(n);
-	dest = (char *)malloc(sizeof(char) * n_len + 1);
-	if (!dest)
+	len = ft_intlen(n);
+	dst = (char *)malloc(sizeof(char) * len + 1);
+	if (!dst)
 		return (NULL);
-	*(dest + n_len--) = '\0';
-	dest = ft_charconv(dest, n, n_len);
-	return (dest);
+	*(dst + len--) = '\0';
+	dst = ft_charconv(dst, n, len);
+	return (dst);
 }
