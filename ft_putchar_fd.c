@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:46:55 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 17:13:27 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/24 17:46:51 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/24 17:48:17 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write (fd, &c, 1);
+	write(fd, &c, 1);
 }

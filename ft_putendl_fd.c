@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:50:06 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 14:50:28 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/24 17:48:38 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 17:51:53 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)

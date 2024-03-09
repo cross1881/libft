@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:51:28 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 15:51:46 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/16 13:27:39 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 18:14:34 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (f && lst)
+	if (lst && f)
 	{
 		while (lst)
 		{

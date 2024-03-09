@@ -5,28 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:31:48 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 16:23:12 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/29 10:37:31 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 22:19:05 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_substr(const char *str, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	size_t	new;
-	char	*dst;
+	char	*estract;
+	size_t	slen;
 
-	if (!str)
+	if (!s)
 		return (NULL);
-	if (start > ft_strlen(str))
+	slen = ft_strlen(s);
+	if (start >= slen)
 		return (ft_strdup(""));
-	str = str + start;
-	new = ft_strlen (str);
-	if (len > new)
-		len = new;
-	dst = (char *)malloc(sizeof(char) * len + 1);
-	if (!dst)
+	s += start;
+	if (len > slen)
+		len = slen;
+	estract = (char *)malloc(sizeof(char) * len + 1);
+	if (!estract)
 		return (NULL);
-	ft_strlcpy(dst, str, len + 1);
-	return (dst);
+	ft_strlcpy(estract, s, len + 1);
+	return (estract);
 }

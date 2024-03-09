@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 16:51:14 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 16:52:15 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/24 18:14:17 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/25 02:06:17 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void
-	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+	if (s)
+	{
+		write(fd, s, ft_strlen(s));
+	}
 }

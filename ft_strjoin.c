@@ -5,27 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:32:44 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 16:26:27 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/29 11:23:02 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 21:12:17 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char	*dst;
-	size_t	len1;
-	size_t	len2;
+	char	*str;
 
 	if (!s1 || !s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	dst = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!dst)
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!str)
 		return (NULL);
-	ft_strlcpy(dst, s1, len1 + 1);
-	ft_strlcat(&dst[len1], s2, len2 + 1);
-	return (dst);
+	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+	ft_strlcat(&str[ft_strlen(s1)], s2, ft_strlen(s2) + 1);
+	return (str);
 }

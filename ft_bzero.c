@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:13:45 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 14:47:11 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/14 18:10:54 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/05 10:43:42 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

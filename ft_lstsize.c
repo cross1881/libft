@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:47:47 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 15:48:09 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/19 17:00:14 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/19 17:38:41 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (lst)
+	if (lst)
 	{
-		lst = lst->next;
-		i++;
+		i = 0;
+		while (lst)
+		{
+			lst = lst->next;
+			i++;
+		}
+		return (i);
 	}
-	return (i);
+	return (0);
 }

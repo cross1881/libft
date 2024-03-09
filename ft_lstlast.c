@@ -5,18 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:48:44 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/27 11:20:13 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/16 13:28:11 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 18:10:34 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{
-		if (lst->next == NULL)
+		if (!(lst->next))
 			return (lst);
 		lst = lst->next;
 	}

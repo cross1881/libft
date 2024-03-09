@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:01:32 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 15:01:52 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/19 16:53:07 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/19 17:39:13 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new;
+	t_list	*lst;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
+	lst = malloc(sizeof(t_list));
+	if (!lst)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	lst->content = content;
+	lst->next = NULL;
+	return (lst);
 }

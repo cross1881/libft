@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:50:40 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/27 11:06:52 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/16 11:59:24 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 22:33:20 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*next;
+	t_list	*nxt;
 
+	if (!lst || !del)
+		return ;
 	while (*lst)
 	{
-		next = (*lst)->next;
+		nxt = (*lst)->next;
 		(*del)((*lst)->content);
 		free(*lst);
-		*lst = next;
+		*lst = nxt;
 	}
 }

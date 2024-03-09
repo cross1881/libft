@@ -5,68 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:38:22 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 17:10:43 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/15 14:15:02 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/08 20:19:56 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_intlen(int n)
+int	ft_ncifre(int n)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	if (n == 0)
-		len++;
+	i = 0;
 	if (n < 0)
 	{
 		n *= -1;
-		len++;
+		i++;
 	}
-	while (n > 0)
+	while (n > 9)
 	{
 		n /= 10;
-		len++;
+		i++;
 	}
-	return (len);
+	i++;
+	return (i);
 }
 
-char	*ft_charconv(char *dst, int n, int len)
+char	*ft_conv(char *str, int n, int len)
 {
 	if (n == 0)
-		*dst = 48;
+		*str = '0';
 	if (n < 0)
 	{
-		*dst = 45;
+		*str = '-';
 		n *= -1;
 	}
 	while (n > 0)
 	{
-		*(dst + len--) = 48 + (n % 10);
+		*(str + len--) = 48 + (n % 10);
 		n /= 10;
 	}
-	return (dst);
+	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*dst;
+	char	*str;
 	int		len;
 
 	if (n == -2147483648)
 	{
-		dst = (char *)malloc(sizeof(char) * 12);
-		if (!dst)
+		str = (char *)malloc(sizeof(char) * 12);
+		if (!str)
 			return (NULL);
-		ft_strlcpy(dst, "-2147483648", 12);
-		return (dst);
+		ft_strlcpy(str, "-2147483648", 12);
+		return (str);
 	}
-	len = ft_intlen(n);
-	dst = (char *)malloc(sizeof(char) * len + 1);
-	if (!dst)
+	len = ft_ncifre(n);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
-	*(dst + len--) = '\0';
-	dst = ft_charconv(dst, n, len);
-	return (dst);
+	str[len--] = '\0';
+	str = ft_conv(str, n, len);
+	return (str);
 }

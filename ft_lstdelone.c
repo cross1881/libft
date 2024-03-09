@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 15:49:58 by mrossett          #+#    #+#             */
-/*   Updated: 2024/01/24 15:53:55 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/16 12:07:58 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/16 12:43:22 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (del && lst)
+	if (lst && del)
 	{
 		(*del)(lst->content);
 		free(lst);

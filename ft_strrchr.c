@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:10:45 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 14:23:15 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/28 18:34:40 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/05 13:52:08 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

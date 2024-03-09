@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 14:53:41 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 14:22:24 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/28 18:27:59 by mrossett          #+#    #+#             */
+/*   Updated: 2024/02/28 19:42:40 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
-		return (c + 32);
+		c += 32;
 	return (c);
 }

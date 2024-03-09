@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrossett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:33:29 by mrossett          #+#    #+#             */
-/*   Updated: 2024/02/05 16:27:56 by mrossett         ###   ########.fr       */
+/*   Created: 2024/02/29 11:38:43 by mrossett          #+#    #+#             */
+/*   Updated: 2024/03/09 00:11:38 by mrossett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strtrim(const char *str, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	finish;
+	int		len;
 
-	if (!str || !set)
+	len = 0;
+	if (!s1 || !set)
 		return (NULL);
-	while (*str != '\0' && ft_strchr(set, *str))
-		str++;
-	finish = ft_strlen(str);
-	while (finish && ft_strchr(set, str[finish]))
-		finish--;
-	return (ft_substr(str, 0, finish + 1));
+	while ((*s1 && ft_strchr(set, *s1)))
+		s1++;
+	len = ft_strlen(s1);
+	while (len && ft_strchr(set, s1[len]))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
 }
